@@ -47,7 +47,7 @@ Build a command line version of the classic puzzle game [Mastermind](https://en.
 
 ###Release 1 :  Determining gameplay
 
-- The user assumes the role of Player Two and the computer, as Player One, randomly chooses four random pegs.
+- The user assumes the role of Player Two and the computer, as Player One, chooses four random pegs.
 - The user chooses four colored pegs.
 - The computer informs the user of how many pegs were correctly positioned and how many were the correct color in the wrong position.
 - The history of the user's choices and the correctness of the positions remains on the screen for each turn.
