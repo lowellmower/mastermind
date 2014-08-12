@@ -40,12 +40,12 @@ Build a command line version of the classic puzzle game [Mastermind](https://en.
 
 ##Releases
 
-###Release 0 : Designing the system
+###Release 0 : Design the system
 
 - Use a whiteboard or piece of paper to model the various components of the game. Think about how you will represent the board, the rows and the pegs.
 - From your whiteboarded design, pseudocode classes (blueprints for objects), data structures (the state of your objects), and methods (the behavior of your objects) you will use.
 
-###Release 1 :  Determining gameplay
+###Release 1 :  Determine the gameplay
 
 - The user assumes the role of Player Two and the computer, as Player One, chooses four random pegs.
 - The user chooses four colored pegs.
@@ -53,7 +53,7 @@ Build a command line version of the classic puzzle game [Mastermind](https://en.
 - The history of the user's choices and the correctness of the positions remains on the screen for each turn.
 - The game ends after the user correctly guesses the computer's combination or after 12 incorrect guesses.
 
-###Release 2 :  Refactoring
+###Release 2 :  Refactor
 
 Refactor your code. Keep in mind the concepts from POODR chapters 2-4. Ask yourself some of the following questions:
 
