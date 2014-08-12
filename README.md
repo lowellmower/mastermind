@@ -76,3 +76,5 @@ Refactor your code. Keep in mind the concepts from POODR chapters 2-4. Ask yours
   - What makes for an easier or harder game?
 
 ##Resources
+* Wikipedia entries on [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)) and [Bulls and Cows](https://en.wikipedia.org/wiki/Bulls_and_cows)
+* [The math behind the most efficient solving algorithm](http://mathworld.wolfram.com/Mastermind.html)
