@@ -36,7 +36,7 @@ Build a command line version of the classic puzzle game [Mastermind](https://en.
 5. Player two loses if she does not guess all four locations after 12 turns.
 
 ###Example board
-![Mastermind Board Example](mastermind_example.svg "Mastermind Board Example")
+![Mastermind Board Example](mastermind_example.jpg "Mastermind Board Example")
 
 ##Releases
 
