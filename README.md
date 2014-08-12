@@ -18,6 +18,14 @@
   * Determine when to use a particular data structure
   * Manipulate and access array data in simple and nested arrays
 
+* Implement Object Oriented programming practices:
+  * Create well-defined classes with a single responsibility
+  * Identify and implement classes based on real world requirements
+  * Implement clean and flexible interfaces between objects
+  * Use composition to give structure to more complex objects
+  * Use the model-view-controller pattern to organize code and decouple concerns
+  * Decompose a problem in various dimensions including (but not limited to): separation of concerns, law of demeter, frequency of use, frequency of change, encapsulation, loose coupling, and the single-responsibility principle
+
 ##Summary
 
 Build a command line version of the classic puzzle game [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)) (otherwise known as [Bulls and Cows](https://en.wikipedia.org/wiki/Bulls_and_cows)).
