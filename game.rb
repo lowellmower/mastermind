@@ -2,7 +2,6 @@ require_relative 'mastermind'
 require_relative 'view'
 
 class Game
-# this will be the controller
 
   def initialize(board, view)
     @board = board
@@ -10,7 +9,10 @@ class Game
   end
 
   def run
-    View.display(@board.display)
+    until @board.guess_counter == 12
+    View.welcome
+    View.display()
+    @board.update_guess_count
   end
 
 end

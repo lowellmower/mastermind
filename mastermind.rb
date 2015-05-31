@@ -6,17 +6,16 @@ class Mastermind
   attr_reader :possible_colors
 
   def initialize #(board_string)
-    @board = " | | |  -     \n[SECRET CODE]"
     @guess_counter = 0
     @secret_code = []
-    @possible_colors = ["R","O","Y","G","B","P"]
     @hint_pegs = []
   end
+  POSSIBLE_COLORS = ["R","O","Y","G","B","P"]
 
   # set_code
   def set_secret_code
     4.times do
-      secret_code << possible_colors.sample
+      secret_code << POSSIBLE_COLORS.sample
     end
   end
 
@@ -42,6 +41,11 @@ class Mastermind
   # update board
   def update_board(string)
     string.split("").map.with_index{|x, i| @board[i+i] = x}
+  end
+
+  # update guess counter
+  def update_guess_count
+    @guess_counter += 1
   end
 
 end
