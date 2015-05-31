@@ -4,7 +4,6 @@ require_relative 'file_update'
 class Mastermind
 
   attr_accessor :board, :secret_code, :guess_counter, :hint_pegs, :guesses
-  attr_reader :possible_colors
 
   def initialize #(board_string)
     @file = "board.txt"
@@ -23,18 +22,30 @@ class Mastermind
     4.times do
       secret_code << POSSIBLE_COLORS.sample
     end
+    binding.pry
   end
 
   # compare_code
   def compare_code(user_input)
-    i = 0
-    4.times do
-      if user_input.split('')[i] == @secret_code[i]
+    guess_arr        = user_input.split('')
+    unmatched_guess  = []
+    unmatched_secret = []
+
+    guess_arr.each_with_index do |guess, idx|
+      if guess == @secret_code[idx]
         @hint_pegs << "r"
-      elsif user_input.split('').include?(@secret_code[i])
+      else
+        unmatched_guess << guess
+        unmatched_secret << @secret_code[idx]
+      end
+    end
+
+    unmatched_guess.each do |guess|
+      idx = unmatched_secret.index(guess)
+      unless idx.nil?
+        unmatched_secret.delete_at(idx)
         @hint_pegs << "w"
       end
-      i += 1
     end
   end
 
@@ -55,6 +66,10 @@ class Mastermind
     update_file(board)
   end
 
+  def clear_board
+    clear_file
+  end
+
   # update guess counter
   def update_guess_count
     @guess_counter += 1
@@ -65,6 +80,19 @@ class Mastermind
     File.readlines(@file) do |file|
       puts file
     end
+  end
+
+  def reset_screen!
+    clear_screen!
+    move_to_home!
+  end
+
+  def clear_screen!
+    print "\e[2J"
+  end
+
+  def move_to_home!
+    print "\e[H"
   end
 
 end
