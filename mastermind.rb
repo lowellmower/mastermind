@@ -1,4 +1,5 @@
 require 'pry'
+require_relative 'file_update'
 
 class Mastermind
 
@@ -6,10 +7,15 @@ class Mastermind
   attr_reader :possible_colors
 
   def initialize #(board_string)
+    @file = "board.txt"
     @guess_counter = 0
     @secret_code = []
     @hint_pegs = []
+    @board = []
   end
+
+  include FileUpdate
+
   POSSIBLE_COLORS = ["R","O","Y","G","B","P"]
 
   # set_code
@@ -39,8 +45,8 @@ class Mastermind
   end
 
   # update board
-  def update_board(string)
-    string.split("").map.with_index{|x, i| @board[i+i] = x}
+  def update_board(user_input)
+    update_file(user_input)
   end
 
   # update guess counter
