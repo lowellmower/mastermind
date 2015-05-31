@@ -1,11 +1,10 @@
-require 'pry'
 require_relative 'file_update'
 
 class Mastermind
 
   attr_accessor :board, :secret_code, :guess_counter, :hint_pegs, :guesses
 
-  def initialize #(board_string)
+  def initialize
     @file = "board.txt"
     @guess_counter = 0
     @secret_code = []
@@ -17,14 +16,12 @@ class Mastermind
 
   POSSIBLE_COLORS = ["R","O","Y","G","B","P"]
 
-  # set_code
   def set_secret_code
     4.times do
       secret_code << POSSIBLE_COLORS.sample
     end
   end
 
-  # compare_code
   def compare_code(user_input)
     guess_arr        = user_input.split('')
     unmatched_guess  = []
@@ -58,7 +55,6 @@ class Mastermind
     @hint_pegs = []
   end
 
-  # update board
   def update_board(board)
     update_file(board)
   end
@@ -67,12 +63,10 @@ class Mastermind
     clear_file
   end
 
-  # update guess counter
   def update_guess_count
     @guess_counter += 1
   end
 
-  # display_board
   def display
     File.readlines(@file) do |file|
       puts file

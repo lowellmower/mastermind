@@ -1,4 +1,3 @@
-require 'pry'
 require_relative 'mastermind'
 require_relative 'view'
 

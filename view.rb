@@ -6,8 +6,6 @@ class View
     @guess = String.new
   end
 
-  POSSIBLE_COLORS = ["R","O","Y","G","B","P"]
-
   def welcome
     puts "M A S T E R M I N D:\n w = right color wrong spot.\n r = right color right spot."
   end
@@ -32,6 +30,5 @@ class View
   def self.display(args)
     puts args
   end
-
 
 end
