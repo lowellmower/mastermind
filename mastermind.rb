@@ -22,7 +22,6 @@ class Mastermind
     4.times do
       secret_code << POSSIBLE_COLORS.sample
     end
-    binding.pry
   end
 
   # compare_code

@@ -25,8 +25,13 @@ class View
     puts "YOU GUESSED THE SECRET CODE!"
   end
 
+  def number_of_guesses(guess_counter)
+    puts "\nYou have #{12 - guess_counter} guesses left!"
+  end
+
   def self.display(args)
     puts args
   end
+
 
 end
