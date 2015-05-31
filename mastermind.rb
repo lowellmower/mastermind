@@ -30,7 +30,6 @@ class Mastermind
     guess_arr        = user_input.split('')
     unmatched_guess  = []
     unmatched_secret = []
-
     guess_arr.each_with_index do |guess, idx|
       if guess == @secret_code[idx]
         @hint_pegs << "r"
@@ -39,7 +38,6 @@ class Mastermind
         unmatched_secret << @secret_code[idx]
       end
     end
-
     unmatched_guess.each do |guess|
       idx = unmatched_secret.index(guess)
       unless idx.nil?

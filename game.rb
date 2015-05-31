@@ -23,8 +23,10 @@ class Game
       @board.reset_screen!
       @view.welcome
       View.display(@board.display)
+      @view.secret_code
     end
     @board.clear_board
+    @view.winner
   end
 
 end
