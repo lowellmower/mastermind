@@ -3,7 +3,7 @@ require_relative 'file_update'
 
 class Mastermind
 
-  attr_accessor :board, :secret_code, :guess_counter, :hint_pegs
+  attr_accessor :board, :secret_code, :guess_counter, :hint_pegs, :guesses
   attr_reader :possible_colors
 
   def initialize #(board_string)
@@ -11,7 +11,7 @@ class Mastermind
     @guess_counter = 0
     @secret_code = []
     @hint_pegs = []
-    @board = []
+    @guesses = []
   end
 
   include FileUpdate
@@ -25,28 +25,34 @@ class Mastermind
     end
   end
 
-  # display_board
-  def display
-    board
-  end
-
   # compare_code
   def compare_code(user_input)
     i = 0
     4.times do
       if user_input.split('')[i] == @secret_code[i]
-        hint_pegs << "r"
+        @hint_pegs << "r"
       elsif user_input.split('').include?(@secret_code[i])
-        hint_pegs << "w"
+        @hint_pegs << "w"
       end
       i += 1
     end
-    hint_pegs
+  end
+
+  def track_guess(user_input)
+    @guesses << user_input
+  end
+
+  def clear_guesses
+    @guesses = []
+  end
+
+  def clear_hint_pegs
+    @hint_pegs = []
   end
 
   # update board
-  def update_board(user_input)
-    update_file(user_input)
+  def update_board(board)
+    update_file(board)
   end
 
   # update guess counter
@@ -54,9 +60,11 @@ class Mastermind
     @guess_counter += 1
   end
 
-end
+  # display_board
+  def display
+    File.readlines(@file) do |file|
+      puts file
+    end
+  end
 
-m = Mastermind.new
-m.set_secret_code
-binding.pry
-m.compare_code("RGRY")
+end
